@@ -8,8 +8,45 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet">
   <style>
-*{box-sizing:border-box}body,button,input,select{font-family:"Roboto",sans-serif}body{margin:0;color:#202a32;background:#fff;font-size:13px}header{padding:16px 22px;border-bottom:1px solid #bbc5cb}h1{font-size:20px;margin:0 0 4px}h2{font-size:17px;margin:0 0 13px}h3{font-size:14px;margin:18px 0 8px}p{line-height:1.5}nav{display:flex;overflow-x:auto;border-bottom:1px solid #b9c5cd;padding:0 14px;background:#f5f7f8}nav button{white-space:nowrap;border:0;border-bottom:3px solid transparent;background:none;padding:13px 11px;cursor:pointer;color:#344653}nav button.active{border-bottom-color:#176a78;color:#075260;font-weight:700}main{padding:20px;max-width:1600px;margin:auto}button{cursor:pointer}button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid #087c93;outline-offset:2px}.sheet{display:none}.sheet.active{display:block}.toolbar{display:flex;gap:12px;align-items:end;flex-wrap:wrap;margin:12px 0 18px}.field{display:flex;flex-direction:column;gap:5px;min-width:120px}.field label{font-weight:500}input,select{border:1px solid #aab9c1;border-radius:3px;padding:8px;background:white;color:#202a32}input[type=number]{width:115px}.btn{border:1px solid #176a78;background:#176a78;color:white;border-radius:3px;padding:9px 13px}.btn.secondary{background:white;color:#176a78}.btn.danger{border-color:#ad4b42;color:#8b2f28;background:#fff;padding:4px 8px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:8px;margin:12px 0 20px}.metric{border:1px solid #c5d0d5;padding:10px;background:#f8fafb}.metric strong{display:block;font-size:15px;margin-top:6px}.tablewrap{overflow:auto;max-width:100%;border:1px solid #c5d0d5}table{border-collapse:collapse;width:100%;white-space:nowrap}th,td{border:1px solid #d5dde1;padding:7px 9px;text-align:left}th{background:#eef2f4;font-weight:700;position:sticky;top:0}td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}tfoot td,.total td{font-weight:700;background:#eff4f5}.bad{color:#ae3029;font-weight:700}.good{color:#176a52;font-weight:700}.muted{color:#62717a}.note{background:#f4f7f8;border-left:3px solid #829ba5;padding:10px 13px;margin:12px 0}.message{min-height:20px;margin:8px 0;color:#176a52;font-weight:500}.message.error{color:#ae3029}.entryform{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:10px;align-items:end;padding:14px;border:1px solid #c5d0d5;background:#fafbfc;margin-bottom:16px}.entryform .wide{grid-column:span 2}.status{padding:5px 0;font-weight:700}ul{line-height:1.8}@media(max-width:650px){main{padding:12px}.entryform .wide{grid-column:span 1}}
-</style>
+    *{box-sizing:border-box}
+    body,button,input,select{font-family:"Roboto",sans-serif}
+    body{margin:0;color:#202a32;background:#fff;font-size:13px}
+    header{padding:16px 22px;border-bottom:1px solid #bbc5cb}
+    h1{font-size:20px;margin:0 0 4px}h2{font-size:17px;margin:0 0 13px}h3{font-size:14px;margin:18px 0 8px}
+    p{line-height:1.5}
+    nav{display:flex;overflow-x:auto;border-bottom:1px solid #b9c5cd;padding:0 14px;background:#f5f7f8}
+    nav button{white-space:nowrap;border:0;border-bottom:3px solid transparent;background:none;padding:13px 11px;cursor:pointer;color:#344653}
+    nav button.active{border-bottom-color:#176a78;color:#075260;font-weight:700}
+    main{padding:20px;max-width:1600px;margin:auto}
+    button{cursor:pointer}
+    button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid #087c93;outline-offset:2px}
+    .sheet{display:none}.sheet.active{display:block}
+    .toolbar{display:flex;gap:12px;align-items:end;flex-wrap:wrap;margin:12px 0 18px}
+    .field{display:flex;flex-direction:column;gap:5px;min-width:120px}.field label{font-weight:500}
+    input,select{border:1px solid #aab9c1;border-radius:3px;padding:8px;background:white;color:#202a32}
+    input[type=number]{width:115px}
+    .btn{border:1px solid #176a78;background:#176a78;color:white;border-radius:3px;padding:9px 13px}
+    .btn.secondary{background:white;color:#176a78}.btn.danger{border-color:#ad4b42;color:#8b2f28;background:#fff;padding:4px 8px}
+    .btn:disabled{opacity:.6;cursor:wait}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:8px;margin:12px 0 20px}
+    .metric{border:1px solid #c5d0d5;padding:10px;background:#f8fafb}.metric strong{display:block;font-size:15px;margin-top:6px}
+    .tablewrap{overflow:auto;max-width:100%;border:1px solid #c5d0d5}
+    table{border-collapse:collapse;width:100%;white-space:nowrap}
+    th,td{border:1px solid #d5dde1;padding:7px 9px;text-align:left}
+    th{background:#eef2f4;font-weight:700;position:sticky;top:0}
+    tfoot td{font-weight:700;background:#eff4f5}
+    .bad{color:#ae3029;font-weight:700}.good{color:#176a52;font-weight:700}.muted{color:#62717a}
+    .note{background:#f4f7f8;border-left:3px solid #829ba5;padding:10px 13px;margin:12px 0}
+    .message{min-height:20px;margin:8px 0;color:#176a52;font-weight:500}.message.error{color:#ae3029}
+    .entryform{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:10px;align-items:end;padding:14px;border:1px solid #c5d0d5;background:#fafbfc;margin-bottom:16px}
+    .entryform .wide{grid-column:span 2}.status{padding:5px 0;font-weight:700}ul,ol{line-height:1.8}
+    .sheet-actions{display:flex;align-items:center;gap:8px;margin:0 0 18px;padding:9px 10px;background:#f5f7f8;border:1px solid #d5dde1;border-radius:3px}
+    .sheet-actions .btn{min-width:78px;padding:7px 12px}
+    .sheet-actions .btn[aria-pressed=true]{background:#176a78;color:#fff}
+    .sheet-actions .btn[aria-pressed=false]{background:#fff;color:#176a78}
+    .sheet-actions .action-hint{margin-left:5px;color:#62717a}
+    @media(max-width:650px){main{padding:12px}.entryform .wide{grid-column:span 1}.sheet-actions{flex-wrap:wrap}.sheet-actions .action-hint{width:100%;margin:2px 0 0}}
+  </style>
   <script src="/_sdk/ea2423e0a01a756f.data_sdk.js" type="text/javascript" integrity="sha512-Sg0g23oG9zpxeVGJw6Q935Wt19sv7pbBtYnmz0dqpxqMmhlUFeBYJjrBQheq1xeE/u69m7uZ8NgZRq4P2+K57w=="></script>
   <script src="/_sdk/dc09d1c476e4a0aa.editing_sdk.js" type="text/javascript" integrity="sha512-fWPJYUpfjxXnsK3FLu4tDL/49uCKmEkUGkcvrKVxnYO+jn6VXV8wgol0bSp2HY54QJtG71bQKCHxs6uDgplmqg=="></script>
   <script src="/_sdk/a202d01287f70bbd.resizing_sdk.js" type="text/javascript" integrity="sha512-1HSymNrRbmVrPINeyKeKDVHS1r/3KBjQvJ/IjvgAGUrP4+gPCV6nzQEbyDs7SEReA7mlPuHyFKB9Zk2K9KmXhQ=="></script>
@@ -157,36 +194,39 @@ const base=[
 ['508','Advertising Expense','Expense','Income Statement','Debit','Yes','Promotion cost'],
 ['509','Miscellaneous Expense','Expense','Income Statement','Debit','Yes','Other operating cost']
 ].map(x=>({account_number:x[0],account_name:x[1],account_type:x[2],financial_statement:x[3],normal_balance:x[4],closing_account:x[5],account_description:x[6]}));
-let records=[],busy=false;
-const $=id=>document.getElementById(id), money=n=>'₱'+(Math.abs(n)<.005?0:n).toLocaleString('en-PH',{minimumFractionDigits:2,maximumFractionDigits:2});
+
+let records=[],busy=false,activeSheet=0;
+const $=id=>document.getElementById(id);
+const money=n=>'₱'+(Math.abs(n)<.005?0:n).toLocaleString('en-PH',{minimumFractionDigits:2,maximumFractionDigits:2});
 const round=n=>Math.round((n+Number.EPSILON)*100)/100;
-const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;':'&quot;',"'":'&#39;'}[c]));
 const accts=()=>[...base,...records.filter(r=>r.row_kind==='account')].sort((a,b)=>a.account_number.localeCompare(b.account_number,undefined,{numeric:true}));
 const lines=()=>records.filter(r=>r.row_kind==='line');
 const period=()=>$('period-end').value||'2026-12-31';
 const validDate=s=>/^\d{4}-\d{2}-\d{2}$/.test(s)&&!Number.isNaN(Date.parse(s))&&new Date(s+'T12:00:00').toISOString().slice(0,10)===s;
+
 const entries=()=>{
- const groups=new Map(),accounts=new Map(accts().map(a=>[a.account_number,a]));
- lines().forEach(r=>{const key=(r.entry_id||'').trim();if(!groups.has(key))groups.set(key,[]);groups.get(key).push(r)});
- const result=new Map();
- groups.forEach((rows,id)=>{
-  let errors=[];if(!id)errors.push('Entry ID required');
-  const dates=new Set(rows.map(r=>r.entry_date)),types=new Set(rows.map(r=>r.entry_type));
-  if(dates.size!==1)errors.push('Dates differ within Entry ID');
-  if(types.size!==1)errors.push('Entry types differ within Entry ID');
-  rows.forEach(r=>{
-   if(!validDate(r.entry_date))errors.push('Invalid date');
-   if(!accounts.has(r.account_number))errors.push('Select a valid account');
-   if(!['Regular','Adjusting','Closing','Reversing'].includes(r.entry_type))errors.push('Invalid entry type');
-   if(!Number.isFinite(+r.debit)||!Number.isFinite(+r.credit)||+r.debit<0||+r.credit<0)errors.push('Amounts must be nonnegative');
-   if(+r.debit>0&&+r.credit>0)errors.push('Debit and credit on same line');
-   if(!(+(r.debit||0)>0||+(r.credit||0)>0))errors.push('Enter one positive amount');
-   if((r.reversal_choice||'Do Not Reverse')==='Reverse'&&r.entry_type!=='Adjusting')errors.push('Reverse selection requires Adjusting type');
+  const groups=new Map(),accounts=new Map(accts().map(a=>[a.account_number,a]));
+  lines().forEach(r=>{const key=(r.entry_id||'').trim();if(!groups.has(key))groups.set(key,[]);groups.get(key).push(r)});
+  const result=new Map();
+  groups.forEach((rows,id)=>{
+    let errors=[];if(!id)errors.push('Entry ID required');
+    if(new Set(rows.map(r=>r.entry_date)).size!==1)errors.push('Dates differ within Entry ID');
+    if(new Set(rows.map(r=>r.entry_type)).size!==1)errors.push('Entry types differ within Entry ID');
+    rows.forEach(r=>{
+      if(!validDate(r.entry_date))errors.push('Invalid date');
+      if(!accounts.has(r.account_number))errors.push('Select a valid account');
+      if(!['Regular','Adjusting','Closing','Reversing'].includes(r.entry_type))errors.push('Invalid entry type');
+      if(!Number.isFinite(+r.debit)||!Number.isFinite(+r.credit)||+r.debit<0||+r.credit<0)errors.push('Amounts must be nonnegative');
+      if(+r.debit>0&&+r.credit>0)errors.push('Debit and credit on same line');
+      if(!(+(r.debit||0)>0||+(r.credit||0)>0))errors.push('Enter one positive amount');
+      if((r.reversal_choice||'Do Not Reverse')==='Reverse'&&r.entry_type!=='Adjusting')errors.push('Reverse selection requires Adjusting type');
+    });
+    const d=round(rows.reduce((s,r)=>s+(+r.debit||0),0)),c=round(rows.reduce((s,r)=>s+(+r.credit||0),0));
+    if(d!==c)errors.push('Not Balanced: difference '+money(d-c));
+    result.set(id,{rows,debit:d,credit:c,errors:[...new Set(errors)],valid:errors.length===0});
   });
-  const d=round(rows.reduce((s,r)=>s+(+r.debit||0),0)),c=round(rows.reduce((s,r)=>s+(+r.credit||0),0));
-  if(d!==c)errors.push('Not Balanced: difference '+money(d-c));
-  result.set(id,{rows,debit:d,credit:c,errors:[...new Set(errors)],valid:errors.length===0});
- });return result;
+  return result;
 };
 const source=(types,end=period())=>[...entries().values()].filter(e=>e.valid).flatMap(e=>e.rows).filter(r=>types.includes(r.entry_type)&&r.entry_date<=end).sort((a,b)=>a.entry_date.localeCompare(b.entry_date)||a.entry_id.localeCompare(b.entry_id));
 const balances=rows=>{let m=new Map(accts().map(a=>[a.account_number,0]));rows.forEach(r=>m.set(r.account_number,round((m.get(r.account_number)||0)+(+r.debit||0)-(+r.credit||0))));return m};
@@ -198,129 +238,202 @@ const status=(d,c,label)=>round(d-c)===0?label+' is Balanced':label+' is Not Bal
 const table=(heads,rows,footer='')=>'<div class="tablewrap canva-table"><table><thead><tr>'+heads.map(h=>'<th>'+esc(h)+'</th>').join('')+'</tr></thead><tbody>'+rows.map(row=>'<tr>'+row.map(cell=>'<td>'+cell+'</td>').join('')+'</tr>').join('')+'</tbody>'+footer+'</table></div>';
 const fmtRow=(r,accounts)=>[esc(r.entry_date),esc(r.entry_id),esc(accounts.get(r.account_number)?.account_name||r.account_number),esc(r.description),money(+r.debit||0),money(+r.credit||0),esc(r.entry_type)];
 const notify=(text,error=false)=>{$('message').textContent=text;$('message').className='message'+(error?' error':'')};
+
 function closing(m){
- const out=[],date=period(),add=(id,num,dr,cr,desc)=>{if(round(dr)||round(cr))out.push({entry_date:date,entry_id:id,entry_type:'Closing',account_number:num,description:desc,debit:round(dr),credit:round(cr),source_document:'Generated closing entry'})};
- let rev=0,exp=0;
- accts().filter(a=>a.account_type==='Revenue').forEach(a=>{let n=get(m,a.account_number);if(n){add('CL-01',a.account_number,Math.max(0,-n),Math.max(0,n),'Close revenue');rev+=-n}});
- if(rev) add('CL-01','303',Math.max(0,-rev),Math.max(0,rev),'Transfer revenue to Income Summary');
- accts().filter(a=>a.account_type==='Expense').forEach(a=>{let n=get(m,a.account_number);if(n){add('CL-02',a.account_number,Math.max(0,-n),Math.max(0,n),'Close expense');exp+=n}});
- if(exp) add('CL-02','303',Math.max(0,exp),Math.max(0,-exp),'Transfer expenses to Income Summary');
- let net=round(rev-exp);if(net){add('CL-03','303',Math.max(0,net),Math.max(0,-net),'Close Income Summary');add('CL-03','301',Math.max(0,-net),Math.max(0,net),'Transfer net income or loss to capital')}
- let draw=get(m,'302');if(draw){add('CL-04','302',Math.max(0,-draw),Math.max(0,draw),'Close drawings');add('CL-04','301',Math.max(0,draw),Math.max(0,-draw),'Transfer drawings to capital')}
- return out;
+  const out=[],date=period(),add=(id,num,dr,cr,desc)=>{if(round(dr)||round(cr))out.push({entry_date:date,entry_id:id,entry_type:'Closing',account_number:num,description:desc,debit:round(dr),credit:round(cr),source_document:'Generated closing entry'})};
+  let rev=0,exp=0;
+  accts().filter(a=>a.account_type==='Revenue').forEach(a=>{let n=get(m,a.account_number);if(n){add('CL-01',a.account_number,Math.max(0,-n),Math.max(0,n),'Close revenue');rev+=-n}});
+  if(rev)add('CL-01','303',Math.max(0,-rev),Math.max(0,rev),'Transfer revenue to Income Summary');
+  accts().filter(a=>a.account_type==='Expense').forEach(a=>{let n=get(m,a.account_number);if(n){add('CL-02',a.account_number,Math.max(0,-n),Math.max(0,n),'Close expense');exp+=n}});
+  if(exp)add('CL-02','303',Math.max(0,exp),Math.max(0,-exp),'Transfer expenses to Income Summary');
+  let net=round(rev-exp);
+  if(net){add('CL-03','303',Math.max(0,net),Math.max(0,-net),'Close Income Summary');add('CL-03','301',Math.max(0,-net),Math.max(0,net),'Transfer net income or loss to capital')}
+  let draw=get(m,'302');
+  if(draw){add('CL-04','302',Math.max(0,-draw),Math.max(0,draw),'Close drawings');add('CL-04','301',Math.max(0,draw),Math.max(0,-draw),'Transfer drawings to capital')}
+  return out;
 }
 const eligible=r=>r.entry_type==='Adjusting'&&['Accrued salaries','Accrued interest','Accrued revenue','Other accrual'].includes(r.adjustment_category);
 function reversing(){
- const next=new Date(period()+'T12:00:00');next.setDate(next.getDate()+1);const date=next.toISOString().slice(0,10);
- return [...entries().values()].filter(e=>e.valid&&e.rows[0].entry_type==='Adjusting'&&e.rows[0].entry_date<=period()&&e.rows.every(r=>eligible(r)&&r.reversal_choice==='Reverse')).flatMap(e=>e.rows.map(r=>({...r,entry_date:date,entry_id:'RV-'+r.entry_id,original_id:r.entry_id,entry_type:'Reversing',description:'Reverse '+r.entry_id+': '+r.description,debit:+r.credit||0,credit:+r.debit||0})));
+  const next=new Date(period()+'T12:00:00');next.setDate(next.getDate()+1);const date=next.toISOString().slice(0,10);
+  return [...entries().values()].filter(e=>e.valid&&e.rows[0].entry_type==='Adjusting'&&e.rows[0].entry_date<=period()&&e.rows.every(r=>eligible(r)&&r.reversal_choice==='Reverse')).flatMap(e=>e.rows.map(r=>({...r,entry_date:date,entry_id:'RV-'+r.entry_id,original_id:r.entry_id,entry_type:'Reversing',description:'Reverse '+r.entry_id+': '+r.description,debit:+r.credit||0,credit:+r.debit||0})));
 }
 function form(adjust=false){
- const prefix=adjust?'adj':'main';
- return `<form id="form-${prefix}" class="entryform">
- <div class="field"><label for="${prefix}-id">Entry ID</label><input id="${prefix}-id" required placeholder="JE-001"></div>
- <div class="field"><label for="${prefix}-date">Entry Date</label><input id="${prefix}-date" type="date" required></div>
- <div class="field"><label for="${prefix}-ref">Reference Number</label><input id="${prefix}-ref"></div>
- <div class="field"><label for="${prefix}-type">Entry Type</label><select id="${prefix}-type">${(adjust?['Adjusting']:['Regular','Adjusting','Closing','Reversing']).map(x=>`<option>${x}</option>`).join('')}</select></div>
- <div class="field"><label for="${prefix}-account">Account Number / Name</label><select id="${prefix}-account" required><option value="">Select account</option>${accts().map(a=>`<option value="${esc(a.account_number)}">${esc(a.account_number)} — ${esc(a.account_name)}</option>`).join('')}</select></div>
- <div class="field wide"><label for="${prefix}-desc">Description / Explanation</label><input id="${prefix}-desc"></div>
- <div class="field"><label for="${prefix}-debit">Debit (₱)</label><input id="${prefix}-debit" type="number" min="0" step="0.01" placeholder="0.00"></div>
- <div class="field"><label for="${prefix}-credit">Credit (₱)</label><input id="${prefix}-credit" type="number" min="0" step="0.01" placeholder="0.00"></div>
- <div class="field"><label for="${prefix}-source">Source or Document</label><input id="${prefix}-source"></div>
- <div class="field"><label for="${prefix}-category">Adjustment Category</label><select id="${prefix}-category"><option value="">Not applicable</option>${['Supplies used','Depreciation','Accrued salaries','Accrued interest','Accrued revenue','Unearned revenue earned','Prepaid expenses expired','Other accrual'].map(x=>`<option>${x}</option>`).join('')}</select></div>
- <div class="field"><label for="${prefix}-reverse">Reversal Selection</label><select id="${prefix}-reverse"><option>Do Not Reverse</option><option>Reverse</option></select></div>
- <button class="btn canva-button" type="submit">Save account line</button></form>`;
+  const prefix=adjust?'adj':'main';
+  return `<form id="form-${prefix}" class="entryform">
+    <div class="field"><label for="${prefix}-id">Entry ID</label><input id="${prefix}-id" required placeholder="JE-001"></div>
+    <div class="field"><label for="${prefix}-date">Entry Date</label><input id="${prefix}-date" type="date" required></div>
+    <div class="field"><label for="${prefix}-ref">Reference Number</label><input id="${prefix}-ref"></div>
+    <div class="field"><label for="${prefix}-type">Entry Type</label><select id="${prefix}-type">${(adjust?['Adjusting']:['Regular','Adjusting','Closing','Reversing']).map(x=>`<option>${x}</option>`).join('')}</select></div>
+    <div class="field"><label for="${prefix}-account">Account Number / Name</label><select id="${prefix}-account" required><option value="">Select account</option>${accts().map(a=>`<option value="${esc(a.account_number)}">${esc(a.account_number)} — ${esc(a.account_name)}</option>`).join('')}</select></div>
+    <div class="field wide"><label for="${prefix}-desc">Description / Explanation</label><input id="${prefix}-desc"></div>
+    <div class="field"><label for="${prefix}-debit">Debit (₱)</label><input id="${prefix}-debit" type="number" min="0" step="0.01" placeholder="0.00"></div>
+    <div class="field"><label for="${prefix}-credit">Credit (₱)</label><input id="${prefix}-credit" type="number" min="0" step="0.01" placeholder="0.00"></div>
+    <div class="field"><label for="${prefix}-source">Source or Document</label><input id="${prefix}-source"></div>
+    <div class="field"><label for="${prefix}-category">Adjustment Category</label><select id="${prefix}-category"><option value="">Not applicable</option>${['Supplies used','Depreciation','Accrued salaries','Accrued interest','Accrued revenue','Unearned revenue earned','Prepaid expenses expired','Other accrual'].map(x=>`<option>${x}</option>`).join('')}</select></div>
+    <div class="field"><label for="${prefix}-reverse">Reversal Selection</label><select id="${prefix}-reverse"><option>Do Not Reverse</option><option>Reverse</option></select></div>
+    <button class="btn canva-button" type="submit">Save account line</button>
+  </form>`;
 }
+
+/* Every sheet has Input and Output controls. Input opens the relevant source;
+   Output opens or moves to the calculated/listed results. */
+const actionTargets={
+  0:{input:1,output:3},
+  1:{input:1,output:1},
+  2:{input:2,output:2},
+  3:{input:2,output:3},
+  4:{input:2,output:4},
+  5:{input:2,output:5},
+  6:{input:7,output:6},
+  7:{input:7,output:7},
+  8:{input:7,output:8},
+  9:{input:2,output:9},
+  10:{input:7,output:10},
+  11:{input:7,output:11},
+  12:{input:7,output:12}
+};
+const inputAnchors={1:'account-form',2:'entry-form-main',7:'entry-form-adjust'};
+const outputAnchors={1:'accounts-table',2:'input-table',3:'journal-table',4:'ledger-table',5:'unadjusted-table',6:'worksheet-table',7:'adjusting-table',8:'adjusted-table',9:'financials',10:'closing-table',11:'post-table',12:'reversing-table'};
+function openSheet(index,anchor){
+  activeSheet=index;
+  document.querySelectorAll('[data-tab]').forEach(b=>{const selected=+b.dataset.tab===index;b.classList.toggle('active',selected);b.setAttribute('aria-selected',String(selected))});
+  document.querySelectorAll('.sheet').forEach((s,i)=>s.classList.toggle('active',i===index));
+  document.querySelectorAll('.sheet-actions button').forEach(b=>b.setAttribute('aria-pressed','false'));
+  const target=$(anchor)||$('sheet-'+index);
+  target.scrollIntoView({behavior:'smooth',block:'start'});
+}
+function setActionState(sheet,kind){
+  const button=document.querySelector(`#sheet-${sheet} [data-sheet-action="${kind}"]`);
+  if(button)button.setAttribute('aria-pressed','true');
+}
+function handleSheetAction(sheet,kind){
+  const destination=actionTargets[sheet][kind];
+  const anchor=kind==='input'?inputAnchors[destination]:outputAnchors[destination];
+  openSheet(destination,anchor);
+  setActionState(destination,kind);
+}
+document.querySelectorAll('.sheet').forEach((section,i)=>{
+  const actions=document.createElement('div');
+  actions.className='sheet-actions canva-panel';
+  actions.setAttribute('role','group');
+  actions.setAttribute('aria-label',names[i]+' input and output');
+  actions.innerHTML=`<button id="sheet-${i}-input" type="button" class="btn secondary canva-button" data-sheet-action="input" aria-pressed="false">Input</button><button id="sheet-${i}-output" type="button" class="btn secondary canva-button" data-sheet-action="output" aria-pressed="false">Output</button><span class="action-hint canva-text">Input: source entries · Output: sheet results</span>`;
+  section.querySelector('h2').after(actions);
+  actions.addEventListener('click',e=>{const button=e.target.closest('[data-sheet-action]');if(button)handleSheetAction(i,button.dataset.sheetAction)});
+});
+
 function render(){
- const accounts=new Map(accts().map(a=>[a.account_number,a]));
- $('entry-form-main').innerHTML=form(false);$('entry-form-adjust').innerHTML=form(true);
- ['main','adj'].forEach(p=>{$(p+'-date').value=period();$('form-'+p).onsubmit=e=>saveLine(e,p)});
- $('accounts-table').innerHTML=table(['Account Number','Account Name','Account Type','Financial Statement','Normal Balance','Closing Account?','Description'],accts().map(a=>[esc(a.account_number),esc(a.account_name),esc(a.account_type),esc(a.financial_statement),esc(a.normal_balance),esc(a.closing_account),esc(a.account_description)]));
- const groups=entries(),all=lines(),invalid=[...groups.values()].filter(e=>!e.valid),valid=[...groups.values()].filter(e=>e.valid);
- const reg=source(['Regular']),adj=source(['Regular','Adjusting']),adjustments=source(['Adjusting']);
- const um=balances(reg),am=balances(adj),close=closing(am),pm=balances([...adj,...close]),reverse=reversing();
- const tbTotals=(m,filter)=>{let t=tb(m,filter);return [round(t.reduce((s,x)=>s+Math.max(0,x.n),0)),round(t.reduce((s,x)=>s+Math.max(0,-x.n),0))]};
- const [ud,uc]=tbTotals(um),[ad,ac]=tbTotals(am),[pd,pc]=tbTotals(pm,a=>a.closing_account==='No');
- const asset=total(am,'Asset'),liab=-total(am,'Liability'),net=round(-total(am,'Revenue')-total(am,'Expense')),draw=get(am,'302'),capital=-get(am,'301'),ending=round(capital+net-draw);
- const sheetStatus=round(asset-liab-ending)===0?'Balance Sheet is Balanced':'Balance Sheet is Not Balanced';
- $('dashboard').innerHTML=[
- ['Number of journal entries',groups.size],['Number of unbalanced / invalid entries',invalid.length],
- ['Total entered debits',money(all.reduce((s,r)=>s+(+r.debit||0),0))],['Total entered credits',money(all.reduce((s,r)=>s+(+r.credit||0),0))],
- ['Unadjusted Trial Balance',status(ud,uc,'Trial Balance')],['Adjusted Trial Balance',status(ad,ac,'Adjusted Trial Balance')],
- ['Balance Sheet',sheetStatus],['Post-Closing Trial Balance',status(pd,pc,'Post-Closing Trial Balance')]
- ].map(([k,v])=>`<div class="metric canva-card">${esc(k)}<strong>${esc(v)}</strong></div>`).join('');
- const sourceHeads=['Entry ID','Entry Date','Reference Number','Entry Type','Account Number','Account Name','Description','Debit','Credit','Source or Document','Review Status','Error Message','Action'];
- const sourceRows=rows=>rows.map(r=>{let e=groups.get((r.entry_id||'').trim()),ok=e?.valid;return [esc(r.entry_id),esc(r.entry_date),esc(r.reference_number),esc(r.entry_type),esc(r.account_number),esc(accounts.get(r.account_number)?.account_name||''),esc(r.description),money(+r.debit||0),money(+r.credit||0),esc(r.source_document),`<span class="${ok?'good':'bad'}">${ok?'Balanced':'Not Balanced'}</span>`,ok?'—':`<span class="bad">${esc(e?.errors.join('; ')||'Incomplete')}</span>`,`<button type="button" class="btn danger canva-button" data-delete="${esc(r.__backendId)}" aria-label="Delete line from ${esc(r.entry_id)}">Delete</button>`]});
- $('input-table').innerHTML=table(sourceHeads,sourceRows(all));
- $('adjusting-table').innerHTML=table([...sourceHeads.slice(0,10),'Category','Reverse?','Review Status','Error Message','Action'],all.filter(r=>r.entry_type==='Adjusting').map(r=>{let e=groups.get((r.entry_id||'').trim());return [...sourceRows([r])[0].slice(0,10),esc(r.adjustment_category),esc(r.reversal_choice),e?.valid?'Balanced':'Not Balanced',esc(e?.errors.join('; ')||'—'),sourceRows([r])[0][12]]}));
- document.querySelectorAll('[data-delete]').forEach(b=>b.onclick=()=>deleteLine(b.dataset.delete,b));
- $('journal-table').innerHTML=table(['Date','Entry ID','Account Name','Description','Debit','Credit','Entry Type'],source(['Regular','Adjusting','Closing','Reversing']).map(r=>fmtRow(r,accounts)));
- const ledgerSel=$('ledger-account'),chosen=ledgerSel.value||'101';
- ledgerSel.innerHTML=accts().map(a=>`<option value="${esc(a.account_number)}">${esc(a.account_number)} — ${esc(a.account_name)}</option>`).join('');
- ledgerSel.value=accounts.has(chosen)?chosen:'101';ledgerSel.onchange=()=>renderLedger(accounts,adj,close,reverse);
- renderLedger(accounts,adj,close,reverse);
- const trial=(m,label,filter)=>{let rows=tb(m,filter).map(({a,n})=>[esc(a.account_number),esc(a.account_name),esc(a.account_type),...split(n)]);let [d,c]=tbTotals(m,filter);return table(['Account Number','Account Name','Account Type','Debit Balance','Credit Balance'],rows,`<tfoot><tr><td colspan="3">Total</td><td>${money(d)}</td><td>${money(c)}</td></tr></tfoot>`)+`<p class="status ${d===c?'good':'bad'}">${esc(status(d,c,label))}</p>`};
- $('unadjusted-table').innerHTML=trial(um,'Trial Balance');
- $('adjusted-table').innerHTML=trial(am,'Adjusted Trial Balance');
- $('post-table').innerHTML=trial(pm,'Post-Closing Trial Balance',a=>a.closing_account==='No');
- const xm=balances(adjustments),wrows=accts().filter(a=>a.account_number!=='303').map(a=>{
- const u=get(um,a.account_number),x=get(xm,a.account_number),v=get(am,a.account_number),isIS=['Revenue','Expense'].includes(a.account_type);
- return [esc(a.account_number),esc(a.account_name),...split(u),...split(x),...split(v),...(isIS?split(v):['','']),...(!isIS?split(v):['',''])]});
- const wsums=Array(10).fill(0);wrows.forEach(r=>r.slice(2).forEach((v,i)=>wsums[i]+=Number(String(v).replace(/[₱,]/g,''))||0));
- if(net!==0)wrows.push(['','Net '+(net>=0?'Income':'Loss'),'','','','','','',net<0?money(-net):'',net>0?money(net):'',net>0?money(net):'',net<0?money(-net):'']);
- const wsfooter='<tfoot><tr><td colspan="2">Totals including net income / loss</td>'+wsums.map((s,i)=>`<td>${money(s+(i===6&&net<0?-net:0)+(i===7&&net>0?net:0)+(i===8&&net>0?net:0)+(i===9&&net<0?-net:0))}</td>`).join('')+'</tr></tfoot>';
- $('worksheet-table').innerHTML=table(['Account Number','Account Name','Unadjusted TB Debit','Unadjusted TB Credit','Adjustments Debit','Adjustments Credit','Adjusted TB Debit','Adjusted TB Credit','Income Statement Debit','Income Statement Credit','Balance Sheet Debit','Balance Sheet Credit'],wrows,wsfooter);
- const statementRows=(type)=>accts().filter(a=>a.account_type===type).map(a=>[esc(a.account_name),money(Math.abs(get(am,a.account_number)))]);
- const opening=round(adj.filter(r=>r.account_number==='301'&&/opening capital/i.test(r.description||'')).reduce((s,r)=>s+(+r.credit||0)-(+r.debit||0),0));
- const contributions=round(capital-opening);
- const classified=(filter)=>accts().filter(filter).map(a=>[esc(a.account_name),money(a.account_type==='Asset'?get(am,a.account_number):-get(am,a.account_number))]);
- const currentAssets=a=>a.account_type==='Asset'&&!/non-current/i.test(a.account_description||'')&&a.account_number!=='151';
- const noncurrent=a=>a.account_type==='Asset'&&(/non-current/i.test(a.account_description||'')||a.account_number==='151');
- const currentLiab=a=>a.account_type==='Liability'&&!/long-term/i.test(a.account_description||'');
- const longLiab=a=>a.account_type==='Liability'&&/long-term/i.test(a.account_description||'');
- const financialTable=(title,rows)=>'<h3>'+title+'</h3>'+table(['Account / Calculation','Amount (₱)'],rows);
- $('financials').innerHTML=
- financialTable('1. Income Statement',[['Revenue accounts',''],...statementRows('Revenue'),['Total revenue',money(-total(am,'Revenue'))],['Expense accounts',''],...statementRows('Expense'),['Total expenses',money(total(am,'Expense'))],['Net '+(net>=0?'income':'loss'),money(net)]])+
- financialTable("2. Statement of Changes in Owner's Equity",[['Beginning Owner’s Capital (lines described “Opening capital”)',money(opening)],['Additional capital contributions / other capital movements',money(contributions)],['Add: net income / (less: net loss)',money(net)],['Less: Owner’s Drawings',money(draw)],['Ending Owner’s Capital',money(ending)]])+
- financialTable('3. Balance Sheet',[['Current assets',''],...classified(currentAssets),['Total current assets',money(accts().filter(currentAssets).reduce((s,a)=>s+get(am,a.account_number),0))],['Non-current assets and contra-assets',''],...classified(noncurrent),['Total assets',money(asset)],['Current liabilities',''],...classified(currentLiab),['Long-term liabilities',''],...classified(longLiab),['Total liabilities',money(liab)],['Ending Owner’s Capital',money(ending)],['Total liabilities and owner’s equity',money(liab+ending)]])+`<p class="status ${round(asset-liab-ending)===0?'good':'bad'}">${sheetStatus}</p>`;
- const generated=(rows,idlabel)=>{let ids=[...new Set(rows.map(r=>r.entry_id))];return table(['Date',idlabel,'Account Name','Explanation','Debit','Credit'],rows.map(r=>fmtRow(r,accounts).slice(0,6)),`<tfoot>${ids.map(id=>{let rs=rows.filter(r=>r.entry_id===id),d=round(rs.reduce((s,r)=>s+(+r.debit||0),0)),c=round(rs.reduce((s,r)=>s+(+r.credit||0),0));return `<tr><td colspan="4">${esc(id)}: ${d===c?'Balanced':'Not Balanced'}</td><td>${money(d)}</td><td>${money(c)}</td></tr>`}).join('')}</tfoot>`)};
- $('closing-table').innerHTML=generated(close,'Closing Entry ID');
- $('reversing-table').innerHTML=table(['Reversing Entry ID','Reversal Date','Original Adjusting Entry ID','Account Name','Explanation','Debit','Credit'],reverse.map(r=>[esc(r.entry_id),esc(r.entry_date),esc(r.original_id),esc(accounts.get(r.account_number)?.account_name),esc(r.description),money(r.debit),money(r.credit)]));
+  const accounts=new Map(accts().map(a=>[a.account_number,a]));
+  $('entry-form-main').innerHTML=form(false);$('entry-form-adjust').innerHTML=form(true);
+  ['main','adj'].forEach(p=>{$(p+'-date').value=period();$('form-'+p).onsubmit=e=>saveLine(e,p)});
+  $('accounts-table').innerHTML=table(['Account Number','Account Name','Account Type','Financial Statement','Normal Balance','Closing Account?','Description'],accts().map(a=>[esc(a.account_number),esc(a.account_name),esc(a.account_type),esc(a.financial_statement),esc(a.normal_balance),esc(a.closing_account),esc(a.account_description)]));
+  const groups=entries(),all=lines(),invalid=[...groups.values()].filter(e=>!e.valid);
+  const reg=source(['Regular']),adj=source(['Regular','Adjusting']),adjustments=source(['Adjusting']);
+  const um=balances(reg),am=balances(adj),close=closing(am),pm=balances([...adj,...close]),reverse=reversing();
+  const tbTotals=(m,filter)=>{let t=tb(m,filter);return [round(t.reduce((s,x)=>s+Math.max(0,x.n),0)),round(t.reduce((s,x)=>s+Math.max(0,-x.n),0))]};
+  const [ud,uc]=tbTotals(um),[ad,ac]=tbTotals(am),[pd,pc]=tbTotals(pm,a=>a.closing_account==='No');
+  const asset=total(am,'Asset'),liab=-total(am,'Liability'),net=round(-total(am,'Revenue')-total(am,'Expense')),draw=get(am,'302'),capital=-get(am,'301'),ending=round(capital+net-draw);
+  const sheetStatus=round(asset-liab-ending)===0?'Balance Sheet is Balanced':'Balance Sheet is Not Balanced';
+  $('dashboard').innerHTML=[
+    ['Number of journal entries',groups.size],['Number of unbalanced / invalid entries',invalid.length],
+    ['Total entered debits',money(all.reduce((s,r)=>s+(+r.debit||0),0))],['Total entered credits',money(all.reduce((s,r)=>s+(+r.credit||0),0))],
+    ['Unadjusted Trial Balance',status(ud,uc,'Trial Balance')],['Adjusted Trial Balance',status(ad,ac,'Adjusted Trial Balance')],
+    ['Balance Sheet',sheetStatus],['Post-Closing Trial Balance',status(pd,pc,'Post-Closing Trial Balance')]
+  ].map(([k,v])=>`<div class="metric canva-card">${esc(k)}<strong>${esc(v)}</strong></div>`).join('');
+  const sourceHeads=['Entry ID','Entry Date','Reference Number','Entry Type','Account Number','Account Name','Description','Debit','Credit','Source or Document','Review Status','Error Message','Action'];
+  const sourceRows=rows=>rows.map(r=>{let e=groups.get((r.entry_id||'').trim()),ok=e?.valid;return [
+    esc(r.entry_id),esc(r.entry_date),esc(r.reference_number),esc(r.entry_type),esc(r.account_number),
+    esc(accounts.get(r.account_number)?.account_name||''),esc(r.description),money(+r.debit||0),money(+r.credit||0),
+    esc(r.source_document),`<span class="${ok?'good':'bad'}">${ok?'Balanced':'Not Balanced'}</span>`,
+    ok?'—':`<span class="bad">${esc(e?.errors.join('; ')||'Incomplete')}</span>`,
+    `<button type="button" class="btn danger canva-button" data-delete="${esc(r.__backendId)}" aria-label="Delete line from ${esc(r.entry_id)}">Delete</button>`
+  ]});
+  $('input-table').innerHTML=table(sourceHeads,sourceRows(all));
+  $('adjusting-table').innerHTML=table([...sourceHeads.slice(0,10),'Category','Reverse?','Review Status','Error Message','Action'],
+    all.filter(r=>r.entry_type==='Adjusting').map(r=>{let e=groups.get((r.entry_id||'').trim()),cells=sourceRows([r])[0];return [...cells.slice(0,10),esc(r.adjustment_category),esc(r.reversal_choice),e?.valid?'Balanced':'Not Balanced',esc(e?.errors.join('; ')||'—'),cells[12]]}));
+  document.querySelectorAll('[data-delete]').forEach(b=>b.onclick=()=>deleteLine(b.dataset.delete,b));
+  $('journal-table').innerHTML=table(['Date','Entry ID','Account Name','Description','Debit','Credit','Entry Type'],source(['Regular','Adjusting','Closing','Reversing']).map(r=>fmtRow(r,accounts)));
+  const ledgerSel=$('ledger-account'),chosen=ledgerSel.value||'101';
+  ledgerSel.innerHTML=accts().map(a=>`<option value="${esc(a.account_number)}">${esc(a.account_number)} — ${esc(a.account_name)}</option>`).join('');
+  ledgerSel.value=accounts.has(chosen)?chosen:'101';ledgerSel.onchange=()=>renderLedger(accounts,adj,close,reverse);
+  renderLedger(accounts,adj,close,reverse);
+  const trial=(m,label,filter)=>{let rows=tb(m,filter).map(({a,n})=>[esc(a.account_number),esc(a.account_name),esc(a.account_type),...split(n)]);let [d,c]=tbTotals(m,filter);return table(['Account Number','Account Name','Account Type','Debit Balance','Credit Balance'],rows,`<tfoot><tr><td colspan="3">Total</td><td>${money(d)}</td><td>${money(c)}</td></tr></tfoot>`)+`<p class="status ${d===c?'good':'bad'}">${esc(status(d,c,label))}</p>`};
+  $('unadjusted-table').innerHTML=trial(um,'Trial Balance');
+  $('adjusted-table').innerHTML=trial(am,'Adjusted Trial Balance');
+  $('post-table').innerHTML=trial(pm,'Post-Closing Trial Balance',a=>a.closing_account==='No');
+  const xm=balances(adjustments),wrows=accts().filter(a=>a.account_number!=='303').map(a=>{
+    const u=get(um,a.account_number),x=get(xm,a.account_number),v=get(am,a.account_number),isIS=['Revenue','Expense'].includes(a.account_type);
+    return [esc(a.account_number),esc(a.account_name),...split(u),...split(x),...split(v),...(isIS?split(v):['','']),...(!isIS?split(v):['',''])];
+  });
+  const wsums=Array(10).fill(0);
+  wrows.forEach(r=>r.slice(2).forEach((v,i)=>wsums[i]+=Number(String(v).replace(/[₱,]/g,''))||0));
+  if(net!==0)wrows.push(['','Net '+(net>=0?'Income':'Loss'),'','','','','','',net<0?money(-net):'',net>0?money(net):'',net>0?money(net):'',net<0?money(-net):'']);
+  const wsfooter='<tfoot><tr><td colspan="2">Totals including net income / loss</td>'+wsums.map((s,i)=>`<td>${money(s+(i===6&&net<0?-net:0)+(i===7&&net>0?net:0)+(i===8&&net>0?net:0)+(i===9&&net<0?-net:0))}</td>`).join('')+'</tr></tfoot>';
+  $('worksheet-table').innerHTML=table(['Account Number','Account Name','Unadjusted TB Debit','Unadjusted TB Credit','Adjustments Debit','Adjustments Credit','Adjusted TB Debit','Adjusted TB Credit','Income Statement Debit','Income Statement Credit','Balance Sheet Debit','Balance Sheet Credit'],wrows,wsfooter);
+  const statementRows=type=>accts().filter(a=>a.account_type===type).map(a=>[esc(a.account_name),money(Math.abs(get(am,a.account_number)))]);
+  const opening=round(adj.filter(r=>r.account_number==='301'&&/opening capital/i.test(r.description||'')).reduce((s,r)=>s+(+r.credit||0)-(+r.debit||0),0));
+  const contributions=round(capital-opening);
+  const classified=filter=>accts().filter(filter).map(a=>[esc(a.account_name),money(a.account_type==='Asset'?get(am,a.account_number):-get(am,a.account_number))]);
+  const currentAssets=a=>a.account_type==='Asset'&&!/non-current/i.test(a.account_description||'')&&a.account_number!=='151';
+  const noncurrent=a=>a.account_type==='Asset'&&(/non-current/i.test(a.account_description||'')||a.account_number==='151');
+  const currentLiab=a=>a.account_type==='Liability'&&!/long-term/i.test(a.account_description||'');
+  const longLiab=a=>a.account_type==='Liability'&&/long-term/i.test(a.account_description||'');
+  const financialTable=(title,rows)=>'<h3>'+title+'</h3>'+table(['Account / Calculation','Amount (₱)'],rows);
+  $('financials').innerHTML=
+    financialTable('1. Income Statement',[['Revenue accounts',''],...statementRows('Revenue'),['Total revenue',money(-total(am,'Revenue'))],['Expense accounts',''],...statementRows('Expense'),['Total expenses',money(total(am,'Expense'))],['Net '+(net>=0?'income':'loss'),money(net)]])+
+    financialTable("2. Statement of Changes in Owner's Equity",[['Beginning Owner’s Capital (lines described “Opening capital”)',money(opening)],['Additional capital contributions / other capital movements',money(contributions)],['Add: net income / (less: net loss)',money(net)],['Less: Owner’s Drawings',money(draw)],['Ending Owner’s Capital',money(ending)]])+
+    financialTable('3. Balance Sheet',[['Current assets',''],...classified(currentAssets),['Total current assets',money(accts().filter(currentAssets).reduce((s,a)=>s+get(am,a.account_number),0))],['Non-current assets and contra-assets',''],...classified(noncurrent),['Total assets',money(asset)],['Current liabilities',''],...classified(currentLiab),['Long-term liabilities',''],...classified(longLiab),['Total liabilities',money(liab)],['Ending Owner’s Capital',money(ending)],['Total liabilities and owner’s equity',money(liab+ending)]])+`<p class="status ${round(asset-liab-ending)===0?'good':'bad'}">${sheetStatus}</p>`;
+  const generated=(rows,idlabel)=>{let ids=[...new Set(rows.map(r=>r.entry_id))];return table(['Date',idlabel,'Account Name','Explanation','Debit','Credit'],rows.map(r=>fmtRow(r,accounts).slice(0,6)),`<tfoot>${ids.map(id=>{let rs=rows.filter(r=>r.entry_id===id),d=round(rs.reduce((s,r)=>s+(+r.debit||0),0)),c=round(rs.reduce((s,r)=>s+(+r.credit||0),0));return `<tr><td colspan="4">${esc(id)}: ${d===c?'Balanced':'Not Balanced'}</td><td>${money(d)}</td><td>${money(c)}</td></tr>`}).join('')}</tfoot>`)};
+  $('closing-table').innerHTML=generated(close,'Closing Entry ID');
+  $('reversing-table').innerHTML=table(['Reversing Entry ID','Reversal Date','Original Adjusting Entry ID','Account Name','Explanation','Debit','Credit'],reverse.map(r=>[esc(r.entry_id),esc(r.entry_date),esc(r.original_id),esc(accounts.get(r.account_number)?.account_name),esc(r.description),money(r.debit),money(r.credit)]));
 }
 function renderLedger(accounts,adj,close,reverse){
- const no=$('ledger-account').value,a=accounts.get(no);if(!a)return;
- let rows=[...adj,...close,...reverse].filter(r=>r.account_number===no).sort((x,y)=>x.entry_date.localeCompare(y.entry_date)||x.entry_id.localeCompare(y.entry_id));
- let balance=0,d=0,c=0;const output=rows.map(r=>{d+=+r.debit||0;c+=+r.credit||0;balance=round(balance+(a.normal_balance==='Debit'?1:-1)*((+r.debit||0)-(+r.credit||0)));return [esc(r.entry_date),esc(r.entry_id),esc(r.description),money(+r.debit||0),money(+r.credit||0),money(balance),esc(r.entry_type)]});
- $('ledger-table').innerHTML=table(['Date','Entry ID','Description','Debit','Credit','Running Balance ('+esc(a.normal_balance)+' normal)','Entry Type'],output,`<tfoot><tr><td colspan="3">Account totals / ending balance</td><td>${money(d)}</td><td>${money(c)}</td><td>${money(balance)}</td><td></td></tr></tfoot>`);
+  const no=$('ledger-account').value,a=accounts.get(no);if(!a)return;
+  let rows=[...adj,...close,...reverse].filter(r=>r.account_number===no).sort((x,y)=>x.entry_date.localeCompare(y.entry_date)||x.entry_id.localeCompare(y.entry_id));
+  let balance=0,d=0,c=0;
+  const output=rows.map(r=>{d+=+r.debit||0;c+=+r.credit||0;balance=round(balance+(a.normal_balance==='Debit'?1:-1)*((+r.debit||0)-(+r.credit||0)));return [esc(r.entry_date),esc(r.entry_id),esc(r.description),money(+r.debit||0),money(+r.credit||0),money(balance),esc(r.entry_type)]});
+  $('ledger-table').innerHTML=table(['Date','Entry ID','Description','Debit','Credit','Running Balance ('+esc(a.normal_balance)+' normal)','Entry Type'],output,`<tfoot><tr><td colspan="3">Account totals / ending balance</td><td>${money(d)}</td><td>${money(c)}</td><td>${money(balance)}</td><td></td></tr></tfoot>`);
 }
 async function saveLine(e,p){
- e.preventDefault();if(busy)return;
- const v=n=>$(p+'-'+n).value.trim(),debit=v('debit')===''?0:Number(v('debit')),credit=v('credit')===''?0:Number(v('credit'));
- if(!validDate(v('date'))||!v('id')||!v('account')||!Number.isFinite(debit)||!Number.isFinite(credit)||debit<0||credit<0||((debit>0)===(credit>0))){notify('Enter a valid date, Entry ID, account, and exactly one positive debit or credit.',true);return}
- if(v('reverse')==='Reverse'&&(v('type')!=='Adjusting'||!['Accrued salaries','Accrued interest','Accrued revenue','Other accrual'].includes(v('category')))){notify('Only eligible adjusting accruals can be marked Reverse.',true);return}
- if(records.length>=999){notify('The 999-record limit has been reached. Delete unused lines before adding more.',true);return}
- const row={row_kind:'line',entry_id:v('id'),entry_date:v('date'),reference_number:v('ref'),entry_type:v('type'),account_number:v('account'),description:v('desc'),debit:round(debit),credit:round(credit),source_document:v('source'),reversal_choice:v('reverse'),adjustment_category:v('category'),account_name:'',account_type:'',financial_statement:'',normal_balance:'',closing_account:'',account_description:''};
- busy=true;const btn=e.target.querySelector('button[type=submit]');btn.disabled=true;btn.textContent='Saving…';
- try{const res=await window.dataSdk.create(row);notify(res.isOk?'Line saved. Complete the Entry ID with offsetting lines to post it.':'Could not save line. '+String(res.error||''),!res.isOk)}catch(err){notify('Could not save line. Please try again.',true)}finally{busy=false;btn.disabled=false;btn.textContent='Save account line'}
+  e.preventDefault();if(busy)return;
+  const v=n=>$(p+'-'+n).value.trim(),debit=v('debit')===''?0:Number(v('debit')),credit=v('credit')===''?0:Number(v('credit'));
+  if(!validDate(v('date'))||!v('id')||!v('account')||!Number.isFinite(debit)||!Number.isFinite(credit)||debit<0||credit<0||((debit>0)===(credit>0))){notify('Enter a valid date, Entry ID, account, and exactly one positive debit or credit.',true);return}
+  if(v('reverse')==='Reverse'&&(v('type')!=='Adjusting'||!['Accrued salaries','Accrued interest','Accrued revenue','Other accrual'].includes(v('category')))){notify('Only eligible adjusting accruals can be marked Reverse.',true);return}
+  if(records.length>=999){notify('The 999-record limit has been reached. Delete unused lines before adding more.',true);return}
+  const row={row_kind:'line',entry_id:v('id'),entry_date:v('date'),reference_number:v('ref'),entry_type:v('type'),account_number:v('account'),description:v('desc'),debit:round(debit),credit:round(credit),source_document:v('source'),reversal_choice:v('reverse'),adjustment_category:v('category'),account_name:'',account_type:'',financial_statement:'',normal_balance:'',closing_account:'',account_description:''};
+  busy=true;const btn=e.target.querySelector('button[type=submit]');btn.disabled=true;btn.textContent='Saving…';
+  try{const res=await window.dataSdk.create(row);notify(res.isOk?'Line saved. Complete the Entry ID with offsetting lines to post it.':'Could not save line. '+String(res.error||''),!res.isOk)}
+  catch(err){notify('Could not save line. Please try again.',true)}
+  finally{busy=false;btn.disabled=false;btn.textContent='Save account line'}
 }
 async function deleteLine(id,btn){
- if(busy)return;const row=records.find(r=>r.__backendId===id);if(!row)return;
- busy=true;btn.disabled=true;btn.textContent='Deleting…';
- try{const res=await window.dataSdk.delete(row);notify(res.isOk?'Line deleted.':'Could not delete line. '+String(res.error||''),!res.isOk)}catch(err){notify('Could not delete line.',true)}finally{busy=false;btn.disabled=false;btn.textContent='Delete'}
+  if(busy)return;const row=records.find(r=>r.__backendId===id);if(!row)return;
+  busy=true;btn.disabled=true;btn.textContent='Deleting…';
+  try{const res=await window.dataSdk.delete(row);notify(res.isOk?'Line deleted.':'Could not delete line. '+String(res.error||''),!res.isOk)}
+  catch(err){notify('Could not delete line.',true)}
+  finally{busy=false;btn.disabled=false;btn.textContent='Delete'}
 }
 $('account-form').onsubmit=async e=>{
- e.preventDefault();if(busy)return;
- const get=id=>$(id).value.trim(),no=get('new-number');
- if(accts().some(a=>a.account_number===no)){notify('That account number already exists.',true);return}
- if(records.length>=999){notify('The 999-record limit has been reached.',true);return}
- const row={row_kind:'account',entry_id:'',entry_date:'',reference_number:'',entry_type:'',account_number:no,description:'',debit:0,credit:0,source_document:'',reversal_choice:'',adjustment_category:'',account_name:get('new-name'),account_type:get('new-type'),financial_statement:get('new-statement'),normal_balance:get('new-normal'),closing_account:get('new-closing'),account_description:get('new-description')};
- busy=true;let btn=$('add-account');btn.disabled=true;btn.textContent='Saving…';
- try{let res=await window.dataSdk.create(row);notify(res.isOk?'Account added.':'Could not add account. '+String(res.error||''),!res.isOk);if(res.isOk)e.target.reset()}catch(err){notify('Could not add account.',true)}finally{busy=false;btn.disabled=false;btn.textContent='Add account'}
+  e.preventDefault();if(busy)return;
+  const get=id=>$(id).value.trim(),no=get('new-number');
+  if(accts().some(a=>a.account_number===no)){notify('That account number already exists.',true);return}
+  if(records.length>=999){notify('The 999-record limit has been reached.',true);return}
+  const row={row_kind:'account',entry_id:'',entry_date:'',reference_number:'',entry_type:'',account_number:no,description:'',debit:0,credit:0,source_document:'',reversal_choice:'',adjustment_category:'',account_name:get('new-name'),account_type:get('new-type'),financial_statement:get('new-statement'),normal_balance:get('new-normal'),closing_account:get('new-closing'),account_description:get('new-description')};
+  busy=true;let btn=$('add-account');btn.disabled=true;btn.textContent='Saving…';
+  try{let res=await window.dataSdk.create(row);notify(res.isOk?'Account added.':'Could not add account. '+String(res.error||''),!res.isOk);if(res.isOk)e.target.reset()}
+  catch(err){notify('Could not add account.',true)}
+  finally{busy=false;btn.disabled=false;btn.textContent='Add account'}
 };
 $('tabs').innerHTML=names.map((n,i)=>`<button type="button" class="canva-button ${i===0?'active':''}" data-tab="${i}" aria-controls="sheet-${i}" aria-selected="${i===0}">${esc(n)}</button>`).join('');
-$('tabs').onclick=e=>{let b=e.target.closest('[data-tab]');if(!b)return;document.querySelectorAll('[data-tab]').forEach(x=>{x.classList.toggle('active',x===b);x.setAttribute('aria-selected',x===b)});document.querySelectorAll('.sheet').forEach((s,i)=>s.classList.toggle('active',i===+b.dataset.tab))};
+$('tabs').onclick=e=>{let b=e.target.closest('[data-tab]');if(b)openSheet(+b.dataset.tab,'sheet-'+b.dataset.tab)};
 $('period-end').addEventListener('change',render);
 render();
-(async()=>{try{let result=await window.dataSdk.init({onDataChanged(data){records=data;render()}});if(!result.isOk)notify('Could not load saved accounting lines. Please reopen the workspace.',true)}catch(err){notify('Could not load saved accounting lines. Please reopen the workspace.',true)}})();
+(async()=>{
+  try{
+    let result=await window.dataSdk.init({onDataChanged(data){records=data;render()}});
+    if(!result.isOk)notify('Could not load saved accounting lines. Please reopen the workspace.',true);
+  }catch(err){notify('Could not load saved accounting lines. Please reopen the workspace.',true)}
+})();
 </script>
  </body>
 </html>
